@@ -1,5 +1,5 @@
 # Ex02 Django ORM Web Application
-## Date: 
+## Date:22/11/26
 
 ## AIM
 To develop a Django Application to store and retrieve data from a Vehicle Service Database platform using Object Relational Mapping(ORM).
@@ -32,10 +32,30 @@ Execute Django admin using localhost and create details for 10 entries
 
 ## PROGRAM
 
+```
 
+from django.db import models
+
+class FoodItem(models.Model):
+    food_id = models.AutoField(primary_key=True)
+    food_name = models.CharField(max_length=100)
+    restaurant_name = models.CharField(max_length=100)
+    category = models.CharField(max_length=50)
+    price = models.IntegerField()
+    rating = models.FloatField()
+    availability = models.BooleanField(default=True)
+
+    class Meta:
+        db_table = 'food_details'
+
+    def __str__(self):
+        return self.food_name
+
+```
 
 ## OUTPUT
 
+<img width="1515" height="763" alt="image" src="https://github.com/user-attachments/assets/958813ef-2bc0-49c3-8243-ec8e27ceb7c1" />
 
 
 ## RESULT
